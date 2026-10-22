@@ -1,0 +1,45 @@
+
+@media(max-width:1000px){
+
+    nav{
+        display:flex;
+        flex-direction: column;
+        width:500px;
+    }
+
+    main{
+        width:500px;
+        height:1000px;
+    }
+
+     .linhas{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);  
+        height:150px;
+     }
+
+     header.topo-linhas{
+        display:none;
+     }
+
+     header.topo-linhas > aside,
+            .linhas > aside {
+            flex: 0 0 20%;
+            max-width: 50%;
+    }
+    
+    .menu{
+        display:block;
+    }
+
+    .radiou-group{
+      display: flex;
+      flex-direction: column;
+      gap:5px;
+    }
+
+
+    .popup-content{
+        height:500px;
+    }
+}

@@ -1,0 +1,206 @@
+
+        body.tema-dia-limpo {
+            background-color: #87CEEB; 
+            color: #1a2a3a;
+        }
+
+        body.tema-dia-nublado {
+            background-color: #B0C4DE; 
+            color: #2d3748;
+        }
+
+        /* --- DIA CHOVENDO --- */
+        body.tema-dia-chovendo {
+            background-color: #7a8897;
+            color: #030303;
+        }
+
+        /* --- DIA TEMPESTADE --- */
+        body.tema-dia-tempestade {
+            background-color: #3e4854;
+            color: white;
+        }
+
+
+        /* ==========================================
+           3. TEMAS DO PERÍODO DA TARDE
+           ========================================== */
+        body.tema-tarde-limpo {
+           /** background-color: #ec9006cc; /* Laranja do pôr do sol */
+            background: linear-gradient(180deg, #2b5876 0%, #4e4376 40%, #e27d60 80%, #f8b195 100%);
+            color: #ffffff;
+        }
+
+        body.tema-tarde-nublado {
+            background-color: #8B9DC3; 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: rgb(41, 38, 38);
+        }
+
+        .tema-tarde-nublado > main > .secao-principal > .informacoes > .linhas {
+            border-color: black;
+        }
+
+        /* --- TARDE CHOVENDO --- */
+        body.tema-tarde-chovendo {
+            background-color: #4A5568;
+            color: #FFFFFF;
+        }
+
+        /* --- TARDE TEMPESTADE --- */
+        body.tema-tarde-tempestade {
+            background-color: #2d3748;
+            color: #FFFFFF;
+        }
+
+
+        /* ==========================================
+           4. TEMAS DO PERÍODO DA NOITE
+           ========================================== */
+        body.tema-noite-limpo {
+            background-color: #0B1D3A; /* Azul escuro noturno */
+            color: #f0f0f0;
+        }
+
+        /* --- NOITE CHOVENDO --- */
+        body.tema-noite-chovendo {
+            background-color: #081226;
+            color: white;
+        }
+
+        /* --- NOITE TEMPESTADE --- */
+        body.tema-noite-tempestade {
+         /**   background-color: #03070f;***/
+            color: white;
+            background: linear-gradient(135deg, #020617 0%, #0f172a 35%, #1e112a 70%, #020617 100%);
+
+        }
+
+body.tema-noite-tempestade> main > nav > div > .linha-vertical,
+body.tema-tarde-tempestade> main > nav > div > .linha-vertical,
+body.tema-tarde-chovendo > main > nav > div > .linha-vertical,
+body.tema-noite-chovendo > main > nav > div > .linha-vertical,
+body.tema-noite-limpo > main > nav > div > .linha-vertical{
+    border-left: 1px solid #fffbfb; 
+}
+
+body.tema-tarde-tempestade> main > nav > div > aside > span{
+ animation: iconeTempestade 2s linear infinite;
+}
+
+body.tema-noite-tempestade> main > nav > div > aside > span{
+ animation: iconeTempestade 2s linear infinite;
+}
+
+body.tema-dia-tempestade > main > nav > div > aside > span{
+    animation: iconeTempestade 2s linear infinite;
+}
+
+@keyframes iconeTempestade {
+  0%   {color:white; transform: scale(1.0); }
+  50%{color:red; transform: scale(1.1);}
+  100%{color:white;transform: scale(1.0); }
+}
+
+
+        /* ==========================================
+           5. ANIMAÇÃO DE CHUVA (CHUVA COMUM)
+           ========================================== */
+        body[class*="-chovendo"]::before,
+        body[class*="-chovendo"]::after {
+            content: "";
+            position: fixed;
+            top: -100px;
+            left: -10%;
+            width: 120%;
+            height: calc(100vh + 200px);
+            pointer-events: none; 
+            z-index: 1;
+        }
+
+        body[class*="-chovendo"]::before {
+            background-image: 
+                radial-gradient(1.5px 30px at 20px 50px, rgba(255, 255, 255, 0.45), transparent),
+                radial-gradient(1.5px 40px at 100px 180px, rgba(255, 255, 255, 0.45), transparent),
+                radial-gradient(1.5px 35px at 220px 80px, rgba(255, 255, 255, 0.45), transparent),
+                radial-gradient(1.5px 45px at 340px 290px, rgba(255, 255, 255, 0.45), transparent);
+            background-size: 400px 400px;
+            animation: cairChuva 0.75s linear infinite;
+            opacity: 0.7;
+        }
+
+        body[class*="-chovendo"]::after {
+            background-image: 
+                radial-gradient(2px 60px at 50px 120px, rgba(255, 255, 255, 0.65), transparent),
+                radial-gradient(2px 50px at 160px 280px, rgba(255, 255, 255, 0.65), transparent),
+                radial-gradient(2px 70px at 280px 40px, rgba(255, 255, 255, 0.65), transparent),
+                radial-gradient(2px 55px at 380px 220px, rgba(255, 255, 255, 0.65), transparent);
+            background-size: 450px 450px;
+            animation: cairChuva 0.5s linear infinite;
+            opacity: 0.9;
+        }
+
+
+        /* ==========================================
+                 TEMPESTADE
+           ========================================== */
+        body[class*="-tempestade"]::before,
+        body[class*="-tempestade"]::after {
+            content: "";
+            position: fixed;
+            top: -100px;
+            left: -10%;
+            width: 120%;
+            height: calc(100vh + 200px);
+            pointer-events: none; 
+            z-index: 1;
+        }
+
+        /* Tempestade camada 1 (mais densa e rápida) */
+        body[class*="-tempestade"]::before {
+            background-image: 
+                radial-gradient(2px 60px at 50px 120px, rgba(255, 255, 255, 0.65), transparent),
+                radial-gradient(2px 50px at 160px 280px, rgba(255, 255, 255, 0.65), transparent),
+                radial-gradient(2px 70px at 280px 40px, rgba(255, 255, 255, 0.65), transparent),
+                radial-gradient(2px 55px at 380px 220px, rgba(255, 255, 255, 0.65), transparent);
+            background-size: 300px 300px;
+            animation: cairChuvaIntensa 0.3s linear infinite;
+            opacity: 0.85;
+        }
+
+        /* Tempestade camada 2 (pesada e em diagonal mais acentuada) */
+        body[class*="-tempestade"]::after {
+            background-image: 
+                radial-gradient(2px 60px at 50px 120px, rgba(255, 255, 255, 0.65), transparent),
+                radial-gradient(2px 50px at 160px 280px, rgba(255, 255, 255, 0.65), transparent),
+                radial-gradient(2px 70px at 280px 40px, rgba(255, 255, 255, 0.65), transparent),
+                radial-gradient(2px 55px at 380px 220px, rgba(255, 255, 255, 0.65), transparent);
+            background-size: 350px 350px;
+            animation: cairChuvaIntensa 0.3s linear infinite;
+            opacity: 1;
+        }
+
+        @keyframes cairChuva {
+            0% { transform: rotate(5deg) translateY(-200px); }
+            100% { transform: rotate(5deg) translateY(250px); }
+        }
+
+        @keyframes cairChuvaIntensa {
+        0% {
+        transform: rotate(8deg) translateY(-200px);
+        }
+        100% {
+        transform: rotate(8deg) translateY(300px);
+         }
+        }
+
+
+     
+        .overlay-tempestade {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+        }

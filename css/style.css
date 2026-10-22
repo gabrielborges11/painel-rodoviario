@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+      margin: 0;                 
+    display: grid;             
+    place-items: center;       
+    min-height: 100vh;  
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 30;
+  font-size: 30px !important;
+  
+}
+
+
+nav{
+  display:flex;
+  border:solid 1px black;
+  border-radius: 15px;
+  width:100%;
+  justify-content: space-between;
+  padding: 0 40px; 
+  height:15%;
+
+}
+
+main{
+    z-index: 10;
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+  flex-direction: column;  
+  min-height: 100vh;
+  height: 100vh;
+  width:80%;
+  gap:10px;
+}
+
+.secao-principal, nav{
+  background: rgba( 255, 255, 255, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 13.5px );
+  -webkit-backdrop-filter: blur( 13.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+.linha-vertical {
+  height: 80%; 
+  border-left: 1px solid #746d6d; 
+ 
+}
+
+section.secao-principal{
+  width:100%;
+  border:solid 1px gray;
+  border-radius: 10px;
+}
+
+
+header.cabecalho{
+
+  display:flex;
+  justify-content: space-between;
+  padding: 0 20px; 
+  width:100%;
+}
+
+
+
+
+.informacoes{
+  display:flex;
+  justify-content: center; 
+  align-items: center;  
+  flex-direction: column;
+  
+}
+
+
+header.topo-linhas {
+  display: flex;
+  padding: 0 30px;
+  height: 30px;
+  width: 98%;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.linhas {
+  border: solid 1px gray;
+  display: flex;
+  padding: 0 30px;
+  height: 50px;
+  width: 98%;
+  text-align: left;
+  margin-top: 5px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+
+header.topo-linhas > aside,
+.linhas > aside {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+
+
+
+header{
+  display:flex;
+  justify-content: space-between;
+  padding: 0 45px;
+  margin-top:15px;
+  
+}
+
+.cabecalho{
+  border-bottom: 1px solid black;
+}
+
+footer{
+  border:solid 1px gray;
+  border-radius:0 0 10px 10px ;
+  margin-top:15px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.letreiro{
+    display: inline-block;
+   padding-left: 100%;
+   animation: rolar 15s linear infinite;
+}
+
+@keyframes rolar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
+.popup-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999; 
+}
+
+.popup-content {
+    z-index: 10000; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    height: 70%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+
+.exibir-clima{
+  text-align: center;
+   display:flex;
+   gap:10px;
+   margin-top:10px;
+   font-size:25px;
+}
+
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+  margin-top:30px;
+}
+
+
+.radio-button input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.radio-button span {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+
+.radio-button:hover span {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+
+.radio-button input[type="radio"]:checked + span {
+  background-color: #007bff;
+  border-color: #0056b3;
+  color: #fff;
+}
+
+
+.radio-button input[type="radio"]:focus-visible + span {
+  outline: 3px solid #80bdff;
+}
+
+.close-btn {
+    display: block;
+    margin-left: auto;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.atualizando{
+  color:white;
+}
+
+.boxAtualizando{
+  display:flex;
+  border:1px solid white;
+  border-radius:30px;
+  background-color:gray;
+  padding:5px;
+  margin-bottom:20px;
+}
+#carregando{
+   font-size: 20px !important;
+   animation: girar 1.5s linear infinite;
+   color:white;
+
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.menu{
+  background-color:black;
+  color:white;
+  border-radius:10px;
+  padding:20px;
+  margin-left:40%;
+  width:90px;
+  display:none;
+}
